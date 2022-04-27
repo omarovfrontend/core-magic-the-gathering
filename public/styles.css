@@ -1,5 +1,6 @@
 .main-container {
     width: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +20,7 @@
     padding: 20px;
     font-size: 20px;
     border-radius: 20px;
-    margin: 300px;
+    margin-top: 300px;
     z-index: 100;
     background-color: white
 }
@@ -27,6 +28,14 @@
 .button {
     font-size: 20px;
     width: 200px;
+    margin: 12px;
+    height: 36px;
+    border-radius: 5px;
+}
+
+.button-extended {
+    font-size: 20px;
+    width: 315px;
     margin: 12px;
     height: 36px;
     border-radius: 5px;
@@ -44,6 +53,19 @@
     background-image: url(/images/reg.png);
     background-color: black;
     image-orientation: center;
+    height: 120%;
+    width: 100%;
+    background-size: cover;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.img-in {
+    background-image: url(/images/aut.jpg);
+    background-color: black;
+    image-orientation: center;
     height: 100%;
     width: 100%;
     background-size: cover;
@@ -53,8 +75,8 @@
     transform: translate(-50%, -50%);
 }
 
-.img-in {
-    background-image: url(/images/aut.jpg);
+.img-lot {
+    background-image: url(/images/lot.jpeg);
     background-color: black;
     image-orientation: center;
     height: 100%;
