@@ -1,41 +1,42 @@
 
-// const express = require('express');
-// const path = require('path');
-// require('dotenv').config();
-// const userRouter = require('./routes/user.router');
-// const PORT = process.env.PORT || 3002;
+const express = require('express');
+const path = require('path');
+const session = require('express-session');
+const FileStore = require('session-file-store')(session);
+const createError = require('http-errors');
+require('dotenv').config();
 
-// // const PORT = 3000
-// // // const session = require('express-session');
-// // // const FileStore = require('session-file-store')(session);
+const cardRouter = require('./routes/card.router');
+const userRouter = require('./routes/user.router');
 
-// app.set('view engine', 'hbs');
-// app.set('views', path.join(__dirname, 'views'));
+const PORT = process.env.PORT || 3000;
 
-// // // const userRouter = require('./routers/user');
-// // // const staffRouter = require('./routers/staff');
-// // // const purchaseRouter = require('./routers/purchase');
+app.set('view engine', 'hbs');
+app.set('views', path.resolve(process.env.PWD, 'views'));
 
-// app.listen(PORT, () => {
-//   console.log(`Server is started on port: ${PORT}`);
-// });
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(process.env.PWD, 'public')));
 
-// app.use(express.json());
-// app.use(express.urlencoded({ extends: true }));
-// app.use(express.static(path.join(__dirname, 'public')))
-// // app.get('/', (req, res) => {
-// //     res.render('signin');
-// // });
-
-// // app.get('/', (req, res) => {
-// //     res.render('signup');
-// // });
+app.use(
+  session({
+    secret: 'secretword',
+    resave: false,
+    store: new FileStore(),
+    saveUninitialized: false,
+    name: 'mtg',
+    cookie: { httpOnly: true },
+  }),
+);
 
 // app.get('/', (req, res) => {
-//     res.render('lot');
+//   res.render('index');
 // });
 
+app.use('/user', userRouter);
+app.use('/card', cardRouter);
 
+app.listen(PORT, () => {
+  console.log(`Server is started on port: ${PORT}`);
+});
 
-
-// app.listen(PORT, () => console.log(`Мы взломали икосаэдр на порту ${PORT}`))
