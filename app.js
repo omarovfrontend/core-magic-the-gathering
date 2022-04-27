@@ -1,9 +1,11 @@
-
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
+const createError = require('http-errors');
 require('dotenv').config();
+
+const cardRouter = require('./routes/card.router');
 const userRouter = require('./routes/user.router');
 
 const PORT = process.env.PORT || 3000;
@@ -22,9 +24,9 @@ app.use(
     secret: 'secretword',
     resave: false,
     store: new FileStore(),
-    saveUninitialized: true,
+    saveUninitialized: false,
     name: 'mtg',
-    cookie: { httpOnly: true, maxAge: 60 * 60 * 1000 },
+    cookie: { httpOnly: true },
   }),
 );
 
@@ -33,6 +35,7 @@ app.use(
 // });
 
 app.use('/user', userRouter);
+app.use('/card', cardRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is started on port: ${PORT}`);

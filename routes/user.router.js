@@ -10,7 +10,7 @@ router
     res.render('signup');
   })
   .post(async (req, res) => {
-    const { name, email, password } = req.body;
+    const { name, email, password, user_city } = req.body;
     const hashPass = bcrypt.hashSync(password, saltRounds);
     const currentUser = await User.create({
       nickname: name,
@@ -18,9 +18,8 @@ router
       password: hashPass,
       city_id: user_city,
     });
-    //req.session.userId = currentUser.id; // для того, чтобы была сразу авторизация
-    //res.redirect('/');
-    res.end();
+    req.session.userId = currentUser.id; // для того, чтобы была сразу авторизация
+    res.redirect('/user/signup');
   });
 
 router
@@ -34,7 +33,7 @@ router
     const result = await bcrypt.compare(password, user.password); // сравниваем пароли
     if (result) {
       req.session.userId = user.id;
-      res.redirect('/');
+      res.redirect('/user/signin');
     } else {
       res.redirect('/user/signup');
     }
