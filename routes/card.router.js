@@ -13,7 +13,7 @@ router.route('/lot')
 		cardname: cardNameInput,
 		img: imgInput,
 		price: priceInput,
-		city_id: cityInput,
+		city_id: +cityInput,
 		quality_id: qualityInput,
 		user_id: req.session?.userId
 	}, {returning: true, plain: true});
@@ -68,6 +68,7 @@ router.get('/lot/:id/edit', async (req, res) => {
 			let card = await Card.findOne({where:{id:req.params.id}});
 			res.render('edit', { card });
 		 });		
+		 
 module.exports = router;		
 
 
