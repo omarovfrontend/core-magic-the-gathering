@@ -1,0 +1,67 @@
+.main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.city-container {
+    font-size: 20px;
+    margin: 10px;
+}
+
+.registr-container {
+    width: 400px;
+    border: solid 1px black;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 20px;
+    margin: 300px;
+    z-index: 100;
+    background-color: white
+}
+
+.button {
+    font-size: 20px;
+    width: 200px;
+    margin: 12px;
+    height: 36px;
+    border-radius: 5px;
+}
+
+.input {
+    font-size: 18px;
+    width: 300px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 7px;
+}
+
+.img-up {
+    background-image: url(/images/reg.png);
+    background-color: black;
+    image-orientation: center;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.img-in {
+    background-image: url(/images/aut.jpg);
+    background-color: black;
+    image-orientation: center;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

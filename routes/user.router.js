@@ -7,40 +7,38 @@ const saltRounds = 5;
 router
   .route('/signup')
   .get((req, res) => {
-    //res.render('signUp');
-    res.send('123');
+    res.render('signup');
   })
   .post(async (req, res) => {
-    const { name, email, password, city_id } = req.body;
+    const { name, email, password } = req.body;
     const hashPass = bcrypt.hashSync(password, saltRounds);
     const currentUser = await User.create({
       nickname: name,
       email: email,
       password: hashPass,
-      city_id: city_id,
+      city_id: user_city,
     });
-    req.session.userId = currentUser.id; // для того, чтобы была сразу авторизация
-    req.session.lifestyle = currentUser.lifestyle;
-    res.redirect('/');
+    //req.session.userId = currentUser.id; // для того, чтобы была сразу авторизация
+    //res.redirect('/');
+    res.end();
   });
 
-// router
-//   .route('/signin')
-//   .get((req, res) => {
-//     res.render('signIn');
-//   })
-//   .post(async (req, res) => {
-//     const { nickName, password } = req.body;
-//     const user = await User.findOne({ where: { name: nickName } });
-//     const result = await bcrypt.compare(password, user.password); // сравниваем пароли
-//     if (result) {
-//       req.session.userId = user.id;
-//       req.session.lifestyle = user.lifestyle;
-//       res.redirect('/');
-//     } else {
-//       res.redirect('/user/signup');
-//     }
-//   });
+router
+  .route('/signin')
+  .get((req, res) => {
+    res.render('signin');
+  })
+  .post(async (req, res) => {
+    const { email, password } = req.body;
+    const user = await User.findOne({ where: { email: email } });
+    const result = await bcrypt.compare(password, user.password); // сравниваем пароли
+    if (result) {
+      req.session.userId = user.id;
+      res.redirect('/');
+    } else {
+      res.redirect('/user/signup');
+    }
+  });
 
 // router.get('/rap', rapCheck, (req, res) => {
 //   res.send('YA RONIAY ZAPAD');

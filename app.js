@@ -1,3 +1,4 @@
+
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
@@ -14,6 +15,7 @@ app.set('views', path.resolve(process.env.PWD, 'views'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(process.env.PWD, 'public')));
 
 app.use(
   session({
@@ -25,6 +27,10 @@ app.use(
     cookie: { httpOnly: true, maxAge: 60 * 60 * 1000 },
   }),
 );
+
+// app.get('/', (req, res) => {
+//   res.render('index');
+// });
 
 app.use('/user', userRouter);
 
