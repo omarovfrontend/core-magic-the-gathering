@@ -1,3 +1,4 @@
+
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
@@ -16,3 +17,4 @@ app.use('/user', userRouter);
 app.listen(PORT, () => {
   console.log(`Server is started on port: ${PORT}`);
 });
+
