@@ -1,4 +1,5 @@
 const deleteCardForm = document.querySelector('#deleteCardBtn')
+const editCardForm = document.querySelector('#editCardBtn')
 
 if (deleteCardForm) {
 	deleteCardForm.addEventListener('click', async (event) => {
