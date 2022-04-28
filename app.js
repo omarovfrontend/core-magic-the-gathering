@@ -9,7 +9,7 @@ const app = express();
 
 const cardRouter = require('./routes/card.router');
 const userRouter = require('./routes/user.router');
-const indexRouter = require('./routes/index');
+const mainRouter = require('./routes/main');
 
 const PORT = process.env.PORT || 3000;
 
@@ -37,7 +37,7 @@ app.use(
 
 app.use('/user', userRouter);
 app.use('/card', cardRouter);
-app.use('/', indexRouter);
+app.use('/', mainRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is started on port: ${PORT}`);
