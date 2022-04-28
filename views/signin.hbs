@@ -1,0 +1,15 @@
+{{!-- менюшка для входа на сайт, если уже зарегистрирован --}}
+
+<div>
+    <div class="img-in"></div>
+    <div class="main-container">
+        <div class="registr-container">
+            <h1>Войти в аккаунт</h1>
+            <form action="/user/signin" method="post">
+                <input class="input" required="required" type="email" name="email" placeholder="Введите email">
+                <input class="input" required="required" type="password" name="password" placeholder="Введите пароль">
+                <button class="button" type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+</div>
