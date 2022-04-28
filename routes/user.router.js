@@ -41,6 +41,9 @@ router
     }
   });
 
+// router.route('/:id')
+// .get((req, res) )
+
   router.route('/logout')
 .get((req, res) => {
 	req.session.destroy();
