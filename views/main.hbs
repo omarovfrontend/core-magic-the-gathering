@@ -4,17 +4,20 @@
 			{{#each cards}}
 			<li class="card__item">
 				<div class="card__inner">
-					<p class="card__inner-title" name="card_name">TITLE</p>
+					<p class="card__inner-title" name="card_name">{{this.cardname}}</p>
 					<img class="card__inner-img" src="{{this.img}}" alt="MTG-1">
 					<div class="card__list-info">
 						<p class="card__list-info__price"><span>Price:</span><i>{{this.price}}$</i></p>
-						<p class="card__list-info__city"><span>City:</span><i>Moscow</i></p>
-						<p class="card__list-info__condition"><span>Condition:</span><i>New</i></p>
+						<p class="card__list-info__city"><span>City:</span><i>{{'City.cityname'}}</i></p>
+						<p class="card__list-info__condition"><span>Condition:</span><i>{{'Quality.condition'}}</i></p>
 					</div>
 					<div class="card__inner-buttons">
+						{{#if flag}}
 						<button>Delete</button>
 						<button>Edit</button>
+						{{else}}
 						<button>Buy</button>
+						{{/if}}
 					</div>
 				</div>
 			</li>
