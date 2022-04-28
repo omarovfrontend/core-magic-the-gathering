@@ -1,4 +1,3 @@
-
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
@@ -43,4 +42,3 @@ app.use('/', indexRouter);
 app.listen(PORT, () => {
   console.log(`Server is started on port: ${PORT}`);
 });
-
