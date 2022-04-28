@@ -13,7 +13,7 @@
 					</div>
 					<div class="card__inner-buttons">
 						{{#if flag}}
-						<button>Delete</button>
+						<button id="deleteCardBtn" data-cardid="{{this.id}}" value="delete">Delete</button>
 						<button>Edit</button>
 						{{else}}
 						<button>Buy</button>

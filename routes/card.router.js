@@ -28,7 +28,7 @@ router.route('/lot')
 }
 });
 
-router.route('/lot/:id')
+router.route('/:id')
 .get(async (req, res) => { 
 	let card;
 	try {
