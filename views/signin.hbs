@@ -5,11 +5,13 @@
     <div class="main-container">
         <div class="registr-container">
             <div class="under-header">
-                <h1>Вход</h1>
+               <h1>Log into</h1>
             </div>
-            <form action="/user/signin" method="post">
-                <input class="input" required="required" type="email" name="email" placeholder="Введите email">
-                <input class="input" required="required" type="password" name="password" placeholder="Введите пароль">
+			<form action="/user/signin" method="post">
+				<label for="exampleEmail" class="form-label">Email address</label>
+				<input class="input" required="required" type="email" name="email" placeholder="Enter emeail*" />
+				<label for="examplePassword" class="form-label">Password</label>
+				<input class="input" required="required" type="password" name="password" placeholder="Enter password*" />
                 <button class="button" type="submit">
                     <div class="under-header">Войти</div>
                 </button>

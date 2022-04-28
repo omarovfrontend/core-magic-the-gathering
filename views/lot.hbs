@@ -7,35 +7,35 @@
                 <h1>Подать объявление</h1>
             </div>
 
-            <form action="/user/lot" method="post">
-                <input class="input" required="required" type="text" name="title" placeholder="Название карты">
-                <input class="input" type="text" name="src" placeholder="Укажите путь //">
+			<form action="/card/lot" method="post">
+				<input class="input" required="required" type="text" name="cardNameInput" placeholder="Название карты">
+				<input class="input" required="required" type="text" name="imgInput" placeholder="Укажите путь //">
                 <button class="button-extended" type="button">
                     <div class="under-header">Загрузить изображение</div>
                 </button>
                 <div class="under-header">Качество карты
-                    <select class="city-container" required="required" name="quality">
-                        <option value="1">Новая</option>
-                        <option value="2">Как новая</option>
-                        <option value="3">Хорошее</option>
-                        <option value="4">Изношенное</option>
-                    </select>
+                    <select class="city-container" required="required" name="qualityInput">
+						<option value="1">Новая</option>
+						<option value="2">Как новая</option>
+						<option value="3">Хорошее</option>
+						<option value="4">Изношенное</option>
+					</select>
                 </div>
                 <div class="under-header">Место продажи
 
-                    <select class="city-container" required="required" name="user_city">
-                        <option value="1">Москва</option>
-                        <option value="2">Санкт-Петербург</option>
-                        <option value="3">Тверь</option>
-                        <option value="4">Севастополь</option>
-                        <option value="5">Новосибирск</option>
-                    </select>
-                    <input class="input" required="required" type="number" name="src" placeholder="Цена">
+<select class="city-container" required="required" name="cityInput">
+						<option value="1">Москва</option>
+						<option value="2">Санкт-Петербург</option>
+						<option value="3">Тверь</option>
+						<option value="4">Севастополь</option>
+						<option value="5">Новосибирск</option>
+					</select>
+            	<input class="input" required="required" type="number" name="priceInput" placeholder="Цена">
                 </div>
-            </form>
-            <button class="button-extended" type="submit">
+                   <button class="button-extended" type="submit">
                 <div class="under-header">Подать объявление</div>
             </button>
+            </form>
+         
         </div>
     </div>
-</div>
