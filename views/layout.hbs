@@ -9,6 +9,51 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
+	  <header class="header"> 
+    <div class="container">
+
+      <div class="header_inner">
+          <a class="header__logo" href="/">
+            <img class="header__logo-img" src="/img/mtg.png" alt="Magic-The-Gathering">
+          </a>
+
+        <div class="choosing-city">
+          <input class="choosing-city__input" placeholder="Your text..." type="text">
+
+          <select name="select">
+            <option>Sochi</option>
+            <option>Krasnodar</option>
+            <option>Saratov</option>
+            <option>Astrakhan</option>
+            <option selected>Moscow</option>
+            <option>Saint-P</option>
+            <option>Yaroslavl</option>
+            <option>Kazan</option>
+            <option>Derbent</option>
+          </select>
+        </div>
+
+        <div class="header_buttons">
+          <button class="btn btn-logout" type="submit">
+            Sell
+          </button>
+          <button class="btn btn-up" type="submit">
+            Sign Up
+          </button>
+          <button class="btn btn-in" type="submit">
+            Sign In
+          </button>
+          <button class="btn btn-logout" type="submit">
+            Logout
+          </button>
+          <a href="#" class="cart__link">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </header>
   {{{body}}}
 </body>
 </html>
