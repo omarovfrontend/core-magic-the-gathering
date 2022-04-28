@@ -4,7 +4,7 @@ const path = require('path');
 const createError = require('http-errors');
 require('dotenv').config();
 
-const cardRouter = require('.routes/card.router')
+const cardRouter = require('./routes/card.router')
 const userRouter = require('./routes/user.router');
 const PORT = process.env.PORT || 3000;
 
