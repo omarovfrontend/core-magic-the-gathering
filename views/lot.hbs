@@ -1,0 +1,35 @@
+{{!-- менюшка для объявления о продаже на сайте --}}
+<div class="img-lot"></div>
+<div>
+	<div class="main-container">
+		<div class="registr-container">
+			<h1>Регистрация</h1>
+			<form action="/card/lot" method="post">
+				<input class="input" required="required" type="text" name="cardNameInput" placeholder="Название карты">
+				<input class="input" required="required" type="text" name="imgInput" placeholder="Укажите путь //">
+				<button class="button-extended" type="button">Загрузить изображение</button>
+				<div>
+					Качество карты
+					<select class="city-container" required="required" name="qualityInput">
+						<option value="1">Новая</option>
+						<option value="2">Как новая</option>
+						<option value="3">Хорошее</option>
+						<option value="4">Изношенное</option>
+					</select>
+				</div>
+				<div>
+					Место продажи
+					<select class="city-container" required="required" name="cityInput">
+						<option value="1">Москва</option>
+						<option value="2">Санкт-Петербург</option>
+						<option value="3">Тверь</option>
+						<option value="4">Севастополь</option>
+						<option value="5">Новосибирск</option>
+					</select>
+					<input class="input" required="required" type="number" name="priceInput" placeholder="Цена">
+				</div>
+				<button class="button-extended" type="submit">Подать объявление</button>
+			</form>
+		</div>
+	</div>
+</div>

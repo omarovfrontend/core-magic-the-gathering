@@ -7,23 +7,25 @@ router.route('/lot')
 })
 .post(async (req, res) => {
 	try {
+		console.log('d11')
 	const { cardNameInput, imgInput, priceInput, cityInput, qualityInput} = req.body;
    const newCard = await Card.create({
 		cardname: cardNameInput,
 		img: imgInput,
 		price: priceInput,
 		city_id: +cityInput,
-		quality_id: qualityInput,
+		quality_id: +qualityInput,
 		user_id: req.session?.userId
 	}, {returning: true, plain: true});
-	return res.redirect(`/lot/${newCard.id}`);
+	return res.redirect('/');
 } catch (error) {
+	console.log(error)
 	res.render('error', {
-		message: 'Не удалось добавить новый лот.',
-		error: {}
+		error
+		// message: 'Не удалось добавить новый лот.',
+		// error: {}
    });
 }
-return res.redirect(`/lot/${newCard.id}`);
 });
 
 router.route('/lot/:id')

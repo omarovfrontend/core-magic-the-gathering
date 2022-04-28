@@ -1,5 +1,297 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2017/07/05/a9713c80-0f5a-475b-bcc6-5d8ea19f0f20/magic-the-gathering.jpg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header {
+  width: 100%;
+  padding: 25px;
+  margin-bottom: 50px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.header_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo-img {
+  width: 250px;
+  height: 50px;
+  display: block;
+}
+
+.choosing-city__input {
+  background-color: #fff;
+  border: 1px solid transparent;
+  width: 200px;
+  height: 35px;
+  padding: 12px;
+  color: #eeb663;
+  font-style: italic;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #18547fac;
+  border-radius: 3px 9px;
+  transition: .20s ease-in-out;
+}
+
+.choosing-city__input:focus-within {
+  width: 250px;
+}
+
+.choosing-city__input:focus,
+.choosing-city select:focus {
+  outline: 0;
+}
+
+.choosing-city__input:focus,
+.choosing-city select:focus {
+  border-color: #eeb663;
+}
+
+.choosing-city select {
+  width: 100px;
+  height: 35px;
+  border: 1px solid transparent;
+  background-color: #18547f71;
+  color: #eeb663;
+  border-radius: 3px 9px;
+}
+
+.header_buttons {
+  padding: 0;
+}
+
+.btn {
+  border: none;
+  font-size: 21px;
+  color: #ad9f9f;
+  background-color: #4285b56f;
+  padding: 7px 18px;
+  margin-right: 15px;
+  border-radius: 5px 15px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all .3s linear;
+}
+
+.btn:hover,
+.card__inner-buttons button:hover {
+  color: #eeb663;
+  background-color: #18547f71;
+  border: 1px solid #eeb663;
+}
+
+.cart__link {
+  color: #ad9f9fb5;
+  font-size: 20px;
+  transition: color .3s linear;
+}
+
+.cart__link:hover {
+  color: #eeb663;
+}
+
+/* SECTION */
+.section {
+  margin-bottom: 40px;
+}
+
+.card__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.card__item {
+  width: 20%;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 50px;
+}
+
+.card__inner {
+  background-color: #eeb66313;
+  border-bottom-left-radius: 15px;
+}
+
+/* .card__item h3 {
+  font-size: 25px;
+  color: #ecdf6a;
+  letter-spacing: 1.2px;
+  margin-bottom: 10px;
+  text-align: center;
+} */
+
+.card__inner-img {
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 20px 20px 0px #eeb663;
+  margin-bottom: 10px;
+}
+
+.card__list-info {
+  padding-left: 60px;
+  margin-bottom: 10px;
+  color: #eeeeee96;
+  font-size: 20px;
+}
+
+.card__list-info p span {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  padding-right: 10px;
+}
+
+.card__inner-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__inner-buttons button {
+  font-size: 18px;
+  color: #ad9f9f;
+  background-color: #4285b56f;
+  padding: 7px 18px;
+  border-radius: 5px 15px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+/* LOADER */
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #16a085;
+  animation: spin 1.7s linear infinite;
+  z-index: 11;
+}
+
+.loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #e74c3c;
+  animation: spin-reverse .6s linear infinite;
+}
+
+.loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #f9c922;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: #222;
+  z-index: 10;
+}
+
+.loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+.loader-wrapper .loader-section.section-right {
+  right: 0;
+}
+
+/* добавляем класс loaded и стили станут такими */
+.loaded .loader-wrapper .loader-section.section-left {
+  transform: translateX(-100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.loaded .loader-wrapper .loader-section.section-right {
+  transform: translateX(100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.loaded .loader {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+
+.loaded .loader-wrapper {
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: all 0.3s 1s ease-out;
+}
+
 .main-container {
     width: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +311,7 @@
     padding: 20px;
     font-size: 20px;
     border-radius: 20px;
-    margin: 300px;
+    margin-top: 300px;
     z-index: 100;
     background-color: white
 }
@@ -27,6 +319,14 @@
 .button {
     font-size: 20px;
     width: 200px;
+    margin: 12px;
+    height: 36px;
+    border-radius: 5px;
+}
+
+.button-extended {
+    font-size: 20px;
+    width: 315px;
     margin: 12px;
     height: 36px;
     border-radius: 5px;
@@ -44,6 +344,19 @@
     background-image: url(/images/reg.png);
     background-color: black;
     image-orientation: center;
+    height: 120%;
+    width: 100%;
+    background-size: cover;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.img-in {
+    background-image: url(/images/aut.jpg);
+    background-color: black;
+    image-orientation: center;
     height: 100%;
     width: 100%;
     background-size: cover;
@@ -53,8 +366,8 @@
     transform: translate(-50%, -50%);
 }
 
-.img-in {
-    background-image: url(/images/aut.jpg);
+.img-lot {
+    background-image: url(/images/lot.jpeg);
     background-color: black;
     image-orientation: center;
     height: 100%;
