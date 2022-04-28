@@ -1,6 +1,6 @@
-const express = require('express').Router();
+const router = require('express').Router();
 const { Card } = require('../db/models');
-const router = require('./user.router');
+
 
 router.route('/lot')
 .get((req, res) => {
