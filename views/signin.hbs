@@ -1,17 +1,21 @@
 {{!-- менюшка для входа на сайт, если уже зарегистрирован --}}
 
 <div>
-	<div class="img-in"></div>
-	<div class="main-container">
-		<div class="registr-container">
+    <div class="img-in"></div>
+    <div class="main-container">
+        <div class="registr-container">
+            <div class="under-header">
+               <h1>Log into</h1>
+            </div>
 			<form action="/user/signin" method="post">
-				<h1>Log into</h1>
 				<label for="exampleEmail" class="form-label">Email address</label>
 				<input class="input" required="required" type="email" name="email" placeholder="Enter emeail*" />
 				<label for="examplePassword" class="form-label">Password</label>
 				<input class="input" required="required" type="password" name="password" placeholder="Enter password*" />
-				<button class="button" type="submit">Login</button>
-			</form>
-		</div>
-	</div>
+                <button class="button" type="submit">
+                    <div class="under-header">Войти</div>
+                </button>
+            </form>
+        </div>
+    </div>
 </div>
