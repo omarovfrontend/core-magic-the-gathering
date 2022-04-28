@@ -1,4 +1,3 @@
-
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
@@ -39,4 +38,3 @@ app.use('/card', cardRouter);
 app.listen(PORT, () => {
   console.log(`Server is started on port: ${PORT}`);
 });
-
