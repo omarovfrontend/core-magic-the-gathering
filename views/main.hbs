@@ -1,42 +1,94 @@
- <body>
- <div class="the-loader">
-    <div class="the-loader__circle"></div>
-    <img
-      src="/img/loader-mtg.png"
-      class="header__logo-img2"
-      alt="logo"
-    />
-    <div class="the-loader__section the-loader__section_left"></div>
-    <div class="the-loader__section the-loader__section_right"></div>
-  </div>
+<body>
+	<header class="header">
+		<div class="container">
 
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+			<div class="header_inner">
+				<a class="header__logo" href="/">
+					<img class="header__logo-img" src="/img/logo.png" alt="Magic-The-Gathering">
+				</a>
 
-<section class="section">
-	<div class="container">
-		<ul class="card__list">
-			{{#each cards}}
-			<li class="card__item">
-				<div class="card__inner">
-					<p class="card__inner-title" name="card_name">{{this.cardname}}</p>
-					<img class="card__inner-img" src="{{this.img}}" alt="MTG-1">
-					<div class="card__list-info">
-						<p class="card__list-info__price"><span>Price:</span><i>{{this.price}}$</i></p>
-						<p class="card__list-info__city"><span>City:</span><i>{{'City.cityname'}}</i></p>
-						<p class="card__list-info__condition"><span>Condition:</span><i>{{'Quality.condition'}}</i></p>
+				<form class="form-find" action="">
+					<div class="choosing-city">
+						<input class="choosing-city__input" name="findCityInput" placeholder="Your text..." type="text">
+
+						<select name="findSelectInput">
+							<option>Sochi</option>
+							<option>Krasnodar</option>
+							<option>Saratov</option>
+							<option>Astrakhan</option>
+							<option selected>Moscow</option>
+							<option>Saint-P</option>
+							<option>Yaroslavl</option>
+							<option>Kazan</option>
+							<option>Derbent</option>
+						</select>
 					</div>
-					<div class="card__inner-buttons">
-						{{#if flag}}
-						<button id="deleteCardBtn" data-cardid="{{this.id}}" value="delete">Delete</button>
-						<button id="editCardBtn" data-cardid="{{this.id}}" value="">Edit</button>
-						{{else}}
-						<button>Buy</button>
-						{{/if}}
-					</div>
+					<button class="btn btn-find" type="submit">
+						Find
+					</button>
+				</form>
+
+				<div class="header_buttons">
+					{{#if userId}}
+					<button class="btn btn-logout" type="submit" onclick="window.location.href = '/user/:id';">
+						{{userName}}
+					</button>
+					<button class="btn btn-logout" type="submit" onclick="window.location.href = '/card/lot';">
+						Sell
+					</button>
+					<button class="btn btn-logout" type="submit" onclick="window.location.href = '/user/logout';">
+						Logout
+					</button>
+
+					<a href="#" class="btn btn-cart">
+						<i class="fas fa-shopping-cart"></i>
+					</a>
+					{{else}}
+					<button class="btn btn-up" type="submit" onclick="window.location.href = '/user/signup';">
+						Registration
+					</button>
+					<button class="btn btn-in" type="submit" onclick="window.location.href = '/user/signin';">
+						Login
+					</button>
+					{{/if}}
 				</div>
-			</li>
-			{{/each}}
-		</ul>
+			</div>
+
+		</div>
+	</header>
+	<section class="section">
+		<div class="container">
+			<ul class="card__list">
+				{{#each cards}}
+				<li class="card__item">
+					<div class="card__inner">
+						<p class="card__inner-title" name="card_name">{{this.cardname}}</p>
+						<img class="card__inner-img" src="{{this.img}}" alt="MTG-1">
+						<div class="card__list-info">
+							<p class="card__list-info__price"><span>Price:</span><i>{{this.price}}$</i></p>
+							<p class="card__list-info__city"><span>City:</span><i>{{'City.cityname'}}</i></p>
+							<p class="card__list-info__condition"><span>Condition:</span><i>{{'Quality.condition'}}</i></p>
+						</div>
+						<div data-cardid="{{this.id}}" class="card__inner-buttons">
+							{{#if flag}}
+							<button data-type="delete">Delete</button>
+							<button>Edit</button>
+							{{else}}
+							<button>Buy</button>
+							{{/if}}
+						</div>
+					</div>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+	</section>
+	<div class="the-loader">
+		<div class="the-loader__circle"></div>
+		<img src="/img/loader-mtg.png" class="header__logo-img2" alt="logo" />
+		<div class="the-loader__section the-loader__section_left"></div>
+		<div class="the-loader__section the-loader__section_right"></div>
 	</div>
-</section>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </body>

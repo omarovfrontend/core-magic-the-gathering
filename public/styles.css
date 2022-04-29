@@ -73,6 +73,7 @@
         0 -4px 8px #F00;
     color: black;
     background-color: rgb(255, 255, 255, 0.00001);
+}
 
 * {
   padding: 0;
@@ -191,7 +192,6 @@ body {
   border: 1px solid #eeb663;
 }
 
-/* SECTION */
 .section {
   margin-bottom: 40px;
 }

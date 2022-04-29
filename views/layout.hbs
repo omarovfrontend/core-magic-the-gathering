@@ -10,60 +10,11 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
 		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<script defer src="/js/application.js"></script>
+
 </head>
 
 <body>
-	<header class="header">
-		<div class="container">
 
-			<div class="header_inner">
-				<a class="header__logo" href="/">
-					<img class="header__logo-img" src="/public/img/logo.png" alt="Magic-The-Gathering">
-				</a>
-
-				<div class="choosing-city">
-					<input class="choosing-city__input" placeholder="Your text..." type="text">
-
-					<select name="select">
-						<option>Sochi</option>
-						<option>Krasnodar</option>
-						<option>Saratov</option>
-						<option>Astrakhan</option>
-						<option selected>Moscow</option>
-						<option>Saint-P</option>
-						<option>Yaroslavl</option>
-						<option>Kazan</option>
-						<option>Derbent</option>
-					</select>
-				</div>
-
-				<div class="header_buttons">
-					{{#if userId}}
-					<button class="btn btn-logout" type="submit" onclick="window.location.href = '/user/:id';">
-						{{userName}}
-					</button>
-					<button class="btn btn-logout" type="submit" onclick="window.location.href = '/card/lot';">
-						Sell
-					</button>
-					<button class="btn btn-logout" type="submit" onclick="window.location.href = '/user/logout';">
-						Logout
-					</button>
-					<a href="#" class="cart__link">
-						<i class="fas fa-shopping-cart"></i>
-					</a>
-					{{else}}
-					<button class="btn btn-up" type="submit" onclick="window.location.href = '/user/signup';">
-						Registration
-					</button>
-					<button class="btn btn-in" type="submit" onclick="window.location.href = '/user/signin';">
-						Login
-					</button>
-					{{/if}}
-				</div>
-			</div>
-
-		</div>
-	</header>
 	{{{body}}}
 
 	<script src="/main.js"></script>

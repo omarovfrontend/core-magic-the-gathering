@@ -1,15 +1,16 @@
-const deleteCardForm = document.querySelector('#deleteCardBtn')
-const editCardForm = document.querySelector('#editCardBtn')
-
-if (deleteCardForm) {
-	deleteCardForm.addEventListener('click', async (event) => {
-		const response = await fetch(`/card/${event.target.dataset.cardid}`, {
-			method: 'DELETE'
+const deleteCardForm = document.querySelector('.card__list')
+// const editCardForm = document.querySelector('#editCardBtn')
+deleteCardForm?.addEventListener('click', async (event) => {
+	const button = event.target.dataset.type;
+	if (button === 'delete') {
+		event.preventDefault()
+		let id = event.target.closest('div').dataset.cardid
+	   const response = await fetch(`/card/${id}`, {
+			method: 'delete'
 		});
-		const responseJson = await response.json();
-
+		
 	  if (response.ok) {
-		event.target.closest('.card__item').remove();
+	    event.target.closest('.card__item').remove();
 	  }
-	})
-}
+	};
+});
