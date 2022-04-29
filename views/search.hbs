@@ -7,23 +7,6 @@
 					<img class="header__logo-img" src="/img/logo.png" alt="Magic-The-Gathering">
 				</a>
 
-				<form class="form-find" action="/search" method="post">
-					<div class="choosing-city">
-						<input class="choosing-city__input" name="findNameInput" placeholder="Your text..." type="text">
-
-						<select name="findSelectInput">
-							<option value="1">Москва</option>
-							<option value="2">Санкт-Петербург</option>
-							<option value="3">Тверь</option>
-							<option value="4">Севастополь</option>
-							<option value="5">Новосибирск</option>
-						</select>
-					</div>
-					<button class="btn btn-find" type="submit">
-						Find
-					</button>
-				</form>
-
 				<div class="header_buttons">
 					{{#if userId}}
 					<button class="btn btn-logout" type="submit" onclick="window.location.href = '/user/:id';">
@@ -55,7 +38,7 @@
 	<section class="section">
 		<div class="container">
 			<ul class="card__list">
-				{{#each cards}}
+				{{#each filterCards}}
 				<li class="card__item">
 					<div class="card__inner">
 						<p class="card__inner-title" name="card_name">{{this.cardname}}</p>
@@ -79,12 +62,3 @@
 			</ul>
 		</div>
 	</section>
-	<div class="the-loader">
-		<div class="the-loader__circle"></div>
-		<img src="/img/loader-mtg.png" class="header__logo-img2" alt="logo" />
-		<div class="the-loader__section the-loader__section_left"></div>
-		<div class="the-loader__section the-loader__section_right"></div>
-	</div>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-</body>

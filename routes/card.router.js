@@ -6,8 +6,7 @@ router.route('/lot')
 	res.render('lot');
 })
 .post(async (req, res) => {
-	try {
-		console.log('d11')
+	try { 
 	const { cardNameInput, imgInput, priceInput, cityInput, qualityInput} = req.body;
    const newCard = await Card.create({
 		cardname: cardNameInput,

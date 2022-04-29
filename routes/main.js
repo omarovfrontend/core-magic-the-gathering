@@ -21,14 +21,30 @@ router.route('/')
 	// console.log(res.locals.userId)
 return res.render('main', { cards });
 })
-// .post((req, res) => {
-// 	const { findCityInput, findSelectInput} = req.body;
-	
-// 	let cards;
-// 	try {
-// 		cards = 
-// 	}
-// })
 
+
+router.post('/search', async (req, res) => {
+	const { findNameInput, findSelectInput} = req.body;
+	let filterCards;
+	try {
+		if (!findNameInput) {
+			filterCards = await Card.findAll({ where: { city_id: findSelectInput }, order:[['id', 'DESC']], raw: true})
+		}
+		if (findNameInput) {
+			filterCards = await Card.findAll({where: {cardname: findNameInput, city_id: findSelectInput}, order:[['id', 'DESC']], raw: true})
+		}
+	} catch (error) {
+		return res.render('error', {
+			message: 'Поиск завершился ошибкой',
+			error: {}
+		});
+	}
+	console.log({ filterCards })
+	return res.render('search', { filterCards })
+});
+
+router.get('/search', (req, res) => {
+	res.render('search')
+}  );
 
 module.exports = router;

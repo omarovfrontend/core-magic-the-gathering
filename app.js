@@ -5,6 +5,7 @@ const FileStore = require('session-file-store')(session);
 const createError = require('http-errors');
 const logger = require('morgan');
 require('dotenv').config();
+const fileUpload = require('express-fileupload');
 
 
 const cardRouter = require('./routes/card.router');
@@ -35,6 +36,7 @@ app.use((req, res, next) => {
 })
 
 app.use(express.json());
+app.use(fileUpload({}));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.resolve(process.env.PWD, 'public')));
 
